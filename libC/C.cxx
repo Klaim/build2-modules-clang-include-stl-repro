@@ -4,8 +4,6 @@ module;
 
 module C;
 
-import A;
-
 using namespace std;
 
 
@@ -13,6 +11,9 @@ namespace C
 {
   void say_hello (ostream& o, const string& n)
   {
-    return A::say_hello(o, n);
+    if (n.empty ())
+      throw invalid_argument ("empty name");
+
+    o << "Hello, " << n << '!' << endl;
   }
 }
