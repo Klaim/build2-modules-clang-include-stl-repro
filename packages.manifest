@@ -2,7 +2,4 @@
 location: libA/
 
 :
-location: libB/
-
-:
 location: libC/
