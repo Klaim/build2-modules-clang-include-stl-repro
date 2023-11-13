@@ -1,7 +1,9 @@
-#include <libA/A.hxx>
+module;
 
 #include <ostream>
 #include <stdexcept>
+
+module A;
 
 using namespace std;
 

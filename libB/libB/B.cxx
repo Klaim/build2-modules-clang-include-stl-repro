@@ -1,6 +1,6 @@
 #include <libB/B.hxx>
 
-#include <libA/A.hxx>
+import A;
 
 using namespace std;
 
