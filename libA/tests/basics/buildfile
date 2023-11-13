@@ -1,3 +1,0 @@
-import libs = libA%lib{A}
-
-exe{driver}: {hxx ixx txx cxx mxx}{**} $libs testscript{**}

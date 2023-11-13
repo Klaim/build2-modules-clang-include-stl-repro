@@ -1,3 +1,0 @@
-# libA
-
-C++ library
