@@ -1,7 +1,7 @@
 intf_libs = # Interface dependencies.
 impl_libs = # Implementation dependencies.
 import impl_libs += godot-cpp%liba{godot-cpp}
-import test_libs = doctest%lib{doctest}
+# import test_libs = doctest%lib{doctest}
 
 ./: liba{C} doc{README.md} manifest
 
@@ -21,7 +21,7 @@ for t: cxx{*.test...}
   n = $name($t)...
 
   ./: $d/exe{$n}: $t $d/{hxx ixx txx mxx}{+$n} $d/testscript{+$n}
-  $d/exe{$n}: liba{C} $test_libs
+  $d/exe{$n}: liba{C} # $test_libs
 }
 
 
