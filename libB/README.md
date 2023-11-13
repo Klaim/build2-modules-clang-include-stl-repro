@@ -1,0 +1,3 @@
+# libB
+
+C++ library
