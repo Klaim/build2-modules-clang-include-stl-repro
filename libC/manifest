@@ -14,3 +14,4 @@ depends: * bpkg >= 0.16.0
 #depends: libhello ^1.0.0
 
 depends: libA == $
+depends: doctest ^2.0.0

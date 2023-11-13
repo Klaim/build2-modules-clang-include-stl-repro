@@ -1,6 +1,7 @@
 intf_libs = # Interface dependencies.
 impl_libs = # Implementation dependencies.
 import impl_libs += libA%lib{A}
+import test_libs = doctest%lib{doctest}
 
 ./: lib{C} doc{README.md} manifest
 
@@ -21,6 +22,7 @@ for t: cxx{*.test...}
 
   ./: $d/exe{$n}: $t $d/{hxx ixx txx mxx}{+$n} $d/testscript{+$n}
   $d/exe{$n}: libul{C}: bin.whole = false
+  $d/exe{$n}: $test_libs
 }
 
 
