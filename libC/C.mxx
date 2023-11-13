@@ -3,6 +3,3 @@ module;
 
 export module C;
 
-export {
-  __symexport  void func() {}
-}

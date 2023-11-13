@@ -3,9 +3,9 @@ impl_libs = # Implementation dependencies.
 import impl_libs += godot-cpp%liba{godot-cpp}
 import test_libs = doctest%lib{doctest}
 
-./: libs{C} doc{README.md} manifest
+./: liba{C} doc{README.md} manifest
 
-libs{C}: {hxx ixx txx cxx mxx}{* -*.test...} $impl_libs $intf_libs
+liba{C}: {hxx ixx txx cxx mxx}{* -*.test...} $impl_libs $intf_libs
 
 # Unit tests.
 #
@@ -21,7 +21,7 @@ for t: cxx{*.test...}
   n = $name($t)...
 
   ./: $d/exe{$n}: $t $d/{hxx ixx txx mxx}{+$n} $d/testscript{+$n}
-  $d/exe{$n}: libs{C} $test_libs
+  $d/exe{$n}: liba{C} $test_libs
 }
 
 
@@ -34,23 +34,23 @@ cxx.poptions =+ "-I$out_root" "-I$src_root"
 
 # Export options.
 #
-libs{C}:
+liba{C}:
 {
   cxx.export.poptions = "-I$out_root" "-I$src_root"
-  cxx.export.libs = $intf_libs
+  cxx.export.liba = $intf_libs
 }
 
 # liba{C}: cxx.export.poptions += -DLIBC_STATIC
-# libs{C}: cxx.export.poptions += -DLIBC_SHARED
+# liba{C}: cxx.export.poptions += -DLIBC_SHARED
 
 # For pre-releases use the complete version to make sure they cannot be used
 # in place of another pre-release or the final version. See the version module
 # for details on the version.* variable values.
 #
 if $version.pre_release
-  libs{C}: bin.lib.version = "-$version.project_id"
+  liba{C}: bin.lib.version = "-$version.project_id"
 else
-  libs{C}: bin.lib.version = "-$version.major.$version.minor"
+  liba{C}: bin.lib.version = "-$version.major.$version.minor"
 
 # Install recreating subdirectories.
 #
