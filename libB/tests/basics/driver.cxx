@@ -1,7 +1,7 @@
 #include <sstream>
 #include <stdexcept>
 
-import B;
+import myproject.B;
 
 #undef NDEBUG
 #include <cassert>

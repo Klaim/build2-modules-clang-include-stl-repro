@@ -2,7 +2,7 @@ module;
 #include <iosfwd>
 #include <string>
 
-export module B;
+export module myproject.B;
 
 export import :version;
 

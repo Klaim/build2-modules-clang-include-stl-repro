@@ -2,7 +2,7 @@ module;
 #include <ostream>
 #include <stdexcept>
 
-module B;
+module myproject.B;
 
 import A;
 
