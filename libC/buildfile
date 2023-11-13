@@ -1,6 +1,6 @@
 intf_libs = # Interface dependencies.
 impl_libs = # Implementation dependencies.
-import impl_libs += libA%liba{A}
+import impl_libs += libA%liba{A} godot-cpp%liba{godot-cpp}
 import test_libs = doctest%lib{doctest}
 
 ./: libs{C} doc{README.md} manifest

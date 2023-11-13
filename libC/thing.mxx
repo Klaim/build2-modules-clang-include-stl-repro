@@ -1,6 +1,6 @@
 module;
-
 #include <iostream>
+#include <godot_cpp/classes/sprite2d.hpp>
 
 export module C:thing;
 
