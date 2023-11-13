@@ -1,11 +1,13 @@
-#include <C.hxx>
-
+module;
 #include <ostream>
 #include <stdexcept>
 
-using namespace std;
+module C;
 
 import A;
+
+using namespace std;
+
 
 namespace C
 {

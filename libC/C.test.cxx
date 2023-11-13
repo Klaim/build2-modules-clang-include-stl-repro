@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include <C.hxx>
+import C;
 
 #undef NDEBUG
 #include <cassert>
