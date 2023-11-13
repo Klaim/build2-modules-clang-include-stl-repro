@@ -1,6 +1,5 @@
 module;
-#include <ostream>
-#include <stdexcept>
+#include <iosfwd>
 #include <godot_cpp/classes/sprite2d.hpp>
 
 

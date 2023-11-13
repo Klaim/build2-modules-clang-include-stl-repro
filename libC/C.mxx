@@ -1,6 +1,5 @@
 module;
 #include <iosfwd>
-#include <string>
 
 export module C;
 
