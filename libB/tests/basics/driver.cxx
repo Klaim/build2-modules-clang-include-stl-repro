@@ -1,8 +1,7 @@
 #include <sstream>
 #include <stdexcept>
 
-#include <libB/version.hxx>
-#include <libB/B.hxx>
+import B;
 
 #undef NDEBUG
 #include <cassert>

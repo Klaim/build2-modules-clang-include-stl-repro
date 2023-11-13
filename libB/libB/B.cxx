@@ -1,4 +1,7 @@
-#include <libB/B.hxx>
+module;
+#include <iostream>
+
+module B;
 
 import A;
 
