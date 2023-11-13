@@ -4,6 +4,8 @@ module;
 
 export module C;
 
+export import :thing;
+
 export namespace C
 {
   // Print a greeting for the specified name into the specified

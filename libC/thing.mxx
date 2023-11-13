@@ -1,0 +1,10 @@
+module;
+
+#include <iostream>
+
+export module C:thing;
+
+export namespace C
+{
+    void thing(std::ostream& out);
+}
