@@ -1,11 +1,11 @@
 intf_libs = # Interface dependencies.
 impl_libs = # Implementation dependencies.
-import impl_libs += libA%lib{A}
+import impl_libs += libA%liba{A}
 import test_libs = doctest%lib{doctest}
 
-./: lib{C} doc{README.md} manifest
+./: libs{C} doc{README.md} manifest
 
-./: lib{C}: libul{C}: {hxx ixx txx cxx mxx}{* -*.test...} $impl_libs $intf_libs
+libs{C}: {hxx ixx txx cxx mxx}{* -*.test...} $impl_libs $intf_libs
 
 # Unit tests.
 #
@@ -21,8 +21,7 @@ for t: cxx{*.test...}
   n = $name($t)...
 
   ./: $d/exe{$n}: $t $d/{hxx ixx txx mxx}{+$n} $d/testscript{+$n}
-  $d/exe{$n}: libul{C}: bin.whole = false
-  $d/exe{$n}: $test_libs
+  $d/exe{$n}: libs{C} $test_libs
 }
 
 
@@ -35,7 +34,7 @@ cxx.poptions =+ "-I$out_root" "-I$src_root"
 
 # Export options.
 #
-lib{C}:
+libs{C}:
 {
   cxx.export.poptions = "-I$out_root" "-I$src_root"
   cxx.export.libs = $intf_libs
@@ -49,13 +48,13 @@ lib{C}:
 # for details on the version.* variable values.
 #
 if $version.pre_release
-  lib{C}: bin.lib.version = "-$version.project_id"
+  libs{C}: bin.lib.version = "-$version.project_id"
 else
-  lib{C}: bin.lib.version = "-$version.major.$version.minor"
+  libs{C}: bin.lib.version = "-$version.major.$version.minor"
 
 # Install recreating subdirectories.
 #
-{hxx ixx txx}{*}:
+{hxx ixx txx mxx}{*}:
 {
   install         = include/
   install.subdirs = true
