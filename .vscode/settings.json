@@ -7,6 +7,7 @@
         "*.build": "makefile",
         "*.mxx": "cpp",
         "*.mpp": "cpp",
-        "iosfwd": "cpp"
+        "iosfwd": "cpp",
+        "stdexcept": "cpp"
     }
 }
